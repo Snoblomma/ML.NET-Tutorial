@@ -10,7 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\myMLAppML.Model\myMLAppML.Model.csproj" />
+    <ProjectReference Include="..\MLModels\myMLAppMLTaxiFare.Model.csproj" />
   </ItemGroup>
 
 </Project>

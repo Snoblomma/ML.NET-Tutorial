@@ -8,10 +8,10 @@ namespace myMLApp
     {
         static void Main(string[] args)
         {
-            ConsumeModel();
+            ConsumeTaxiFareModel();
         }
 
-        public static void ConsumeModel()
+        public static void ConsumeTaxiFareModel()
         {
             // Load the model
             MLContext mlContext = new MLContext();
@@ -22,13 +22,16 @@ namespace myMLApp
 
             // Use the code below to add input data
             var input = new ModelInput();
-            input.SentimentText = "Your personal problems should be left at home, you’re here to work.";
+            input.Passenger_count = 2;
+            input.Trip_time_in_secs = 1200;
+            input.Trip_distance = 2.2f;
+
 
             // Try model on sample data
             // True is toxic, false is non-toxic
             ModelOutput result = predEngine.Predict(input);
 
-            Console.WriteLine($"Text: {input.SentimentText} | Prediction: {(Convert.ToBoolean(result.Prediction) ? "Toxic" : "Non Toxic")} sentiment");
+            Console.WriteLine($"Passenger count: {input.Passenger_count}, Trip time: {input.Trip_time_in_secs}, Trip distance: {input.Trip_distance} | Prediction: {result.Score}");
         }
     }
 }

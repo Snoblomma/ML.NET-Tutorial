@@ -4,19 +4,13 @@
 //*                                                                                       *
 //*****************************************************************************************
 
+using System;
 using Microsoft.ML.Data;
 
 namespace MyMLAppML.Model.DataModels
 {
-    public class ModelInput
+    public class ModelOutput
     {
-        [ColumnName("Sentiment"), LoadColumn(0)]
-        public bool Sentiment { get; set; }
-
-
-        [ColumnName("SentimentText"), LoadColumn(1)]
-        public string SentimentText { get; set; }
-
-
+        public float Score { get; set; }
     }
 }
